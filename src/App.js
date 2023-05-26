@@ -1,24 +1,24 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
 
 import Header from './components/Header';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
 import NotFound from './pages/NotFound';
+import PizzaDetails from './pages/PizzaDetails';
 
 import './scss/app.scss';
+import MainLayout from './layouts/MainLayout';
 
 function App() {
   return (
-    <div className="wrapper">
-      <Header />
-      <div className="content">
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/cart" element={<Cart />}></Route>
-          <Route path="*" element={<NotFound />}></Route>
-        </Routes>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route path="" element={<Home />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="pizza/:id" element={<PizzaDetails />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 }
 
