@@ -4,16 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import qs from 'qs';
 import {
-  selectFilter,
   setCategoryId,
   setCurrentPage,
   setFilters,
-} from '../redux/slices/filterSlice';
-import {
-  SearchPizzaParams,
-  fetchPizzas,
-  selectPizzaData,
-} from '../redux/slices/pizzaSlice';
+} from '../redux/filter/slice';
+import { selectFilter } from '../redux/filter/selectors';
+import { SearchPizzaParams } from '../redux/pizza/slice';
+import { fetchPizzas } from '../redux/pizza/asyncActions';
+import { selectPizzaData } from '../redux/pizza/selectors';
 
 //COMPONENTS
 import { sortList } from '../components/Sort';
