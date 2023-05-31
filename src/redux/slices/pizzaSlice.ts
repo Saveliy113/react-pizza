@@ -1,8 +1,6 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import {} from '@reduxjs/toolkit/query/react';
 import axios from 'axios';
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
-import { Sort } from './filterSlice';
 
 type Pizza = {
   id: string;
