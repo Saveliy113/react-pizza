@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 
 const PizzaDetails: React.FC = () => {
@@ -43,6 +43,11 @@ const PizzaDetails: React.FC = () => {
       <img src={pizza.imageUrl} alt={pizza.title} />
       <h2>{pizza.title}</h2>
       <h4>{pizza.price} руб.</h4>
+      <Link to='/fdfd'>
+        <button className="button button--outline button--add">
+          <span>Назад</span>
+        </button>
+      </Link>
     </div>
   );
 };
